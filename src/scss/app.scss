@@ -1,5 +1,8 @@
-$rojo : blue;
 
+// Forma anterior, se ponian los imports en el documento principal
+//Esto hacia que todos los documentos estén disponibles globalmente 
+//Por lo cual el documento principal tenía todos los imports 
+@import 'base/variables';
 body{
     background-color: $rojo;
 }

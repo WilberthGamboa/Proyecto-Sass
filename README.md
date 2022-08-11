@@ -17,3 +17,7 @@ npm i --save-dev gulp-sass
 ## Ejecutar la tarea
 
 npx gulp (nombre tarea)   // npx gulp dev
+
+## SASS 
+
+Para identificar que es un archivo secundario _nombrearchivo un principal no lleva el guión bajo 
