@@ -19,5 +19,7 @@ npm i --save-dev gulp-sass
 npx gulp (nombre tarea)   // npx gulp dev
 
 ## SASS 
-
+### Identificar archivos principales
 Para identificar que es un archivo secundario _nombrearchivo un principal no lleva el guión bajo 
+### Estructura 
+Dentro de cada carpeta se debe alojar un _index.scss
