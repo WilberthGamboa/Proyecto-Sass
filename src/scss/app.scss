@@ -1,8 +1,16 @@
-
-// Forma anterior, se ponian los imports en el documento principal
-//Esto hacia que todos los documentos estén disponibles globalmente 
-//Por lo cual el documento principal tenía todos los imports 
+/*
+Forma anterior, se ponian los imports en el documento principal
+Esto hacia que todos los documentos estén disponibles globalmente 
+Por lo cual el documento principal tenía todos los imports 
 @import 'base/variables';
 body{
     background-color: $rojo;
 }
+
+*/
+
+
+//FORMA NUEVA
+@use 'base'; //El use compila y el import solamente apunta, USE NO VUELVE LOS DOCUMENTOS GLOBALES
+@use 'contenido';
+@use 'ui';

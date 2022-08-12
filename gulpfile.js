@@ -8,14 +8,15 @@ const sass = require("gulp-sass")(require('sass'));
 function css(done){
     //Indentificar el archivo SASS
     //Aquí utilizaremos pipe, identifica una acción que se realiza después de otra
-    src('src/scss/app.scss').pipe(sass()).pipe(dest("build/css"))
-
+    //src('src/scss/app.scss').pipe(sass()).pipe(dest("build/css"))  , cambiaremos la sintaxis para que escuche todas
+    src('src/scss/**/*.scss').pipe(sass()).pipe(dest("build/css"))
 
     done(); //Call back que avisa a gulp cuando lleguamos al final
 }
 
 function dev(done){
-    watch("src/scss/app.scss",css)
+   // watch("src/scss/app.scss",css)  cambiaremos la sintaxis para que escuche todas
+   watch('src/scss/**/*.scss',css)
     done();
 }
 
