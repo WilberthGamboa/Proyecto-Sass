@@ -12,5 +12,4 @@ body{
 
 //FORMA NUEVA
 @use 'base'; //El use compila y el import solamente apunta, USE NO VUELVE LOS DOCUMENTOS GLOBALES
-@use 'contenido';
-@use 'ui';
+@use'layout';

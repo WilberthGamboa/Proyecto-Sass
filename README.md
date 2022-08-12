@@ -18,6 +18,9 @@ npm i --save-dev gulp-sass
 
 npx gulp (nombre tarea)   // npx gulp dev
 
+### GULP PLUMBER
+Evita que se detenga el watch cada vez que se presenta un error
+npm i --save-dev gulp-plumber
 ## SASS 
 ### Identificar archivos principales
 Para identificar que es un archivo secundario _nombrearchivo un principal no lleva el guión bajo 
