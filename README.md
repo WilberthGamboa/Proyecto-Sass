@@ -26,3 +26,7 @@ npm i --save-dev gulp-plumber
 Para identificar que es un archivo secundario _nombrearchivo un principal no lleva el guión bajo 
 ### Estructura 
 Dentro de cada carpeta se debe alojar un _index.scss
+
+
+### snippets ARCHIVOS SASS
+ctrl+shift+p, configure uses snippets and open scss.json
