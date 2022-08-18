@@ -1,7 +1,12 @@
 //COMPILAR ARCHIVOS SCSS CON GULP 
-const {src, dest,watch} = require('gulp'); //EXTRAE LA FUNCIONAL DEL JSON GULP
+const {src, dest,watch, parallel} = require('gulp'); //EXTRAE LA FUNCIONAL DEL JSON GULP
+//CSS
 const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
+
+//IMAGENES
+const webp = require ('gulp-webp');
+
 //src permite identificar un archivo 
 //dest sirve para guardarlo 
 // igual está la funcion de watch
@@ -18,12 +23,23 @@ function css(done){
 
     done(); //Call back que avisa a gulp cuando lleguamos al final
 }
-
+function versionWebp(done){
+    const opciones ={
+        quality:50
+    };
+    
+    src('src/img/**/*.{png,jpg}')
+        .pipe(webp(opciones))
+        .pipe(dest('build/img'))
+        done();
+}
 function dev(done){
    // watch("src/scss/app.scss",css)  cambiaremos la sintaxis para que escuche todas
    watch('src/scss/**/*.scss',css)
     done();
 }
 
-exports.dev=dev;
 exports.css=css;
+exports.versionWebp = versionWebp;
+
+exports.dev=parallel(versionWebp,dev);

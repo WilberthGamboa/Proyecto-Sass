@@ -30,3 +30,6 @@ Dentro de cada carpeta se debe alojar un _index.scss
 
 ### snippets ARCHIVOS SASS
 ctrl+shift+p, configure uses snippets and open scss.json
+
+### Convertir imagenes en webp
+npm install --save-dev gulp-webp
