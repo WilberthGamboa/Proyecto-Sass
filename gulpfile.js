@@ -5,6 +5,8 @@ const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
 
 //IMAGENES
+const cache = require('gulp-cache');
+const imagemin = require('gulp-imagemin');
 const webp = require ('gulp-webp');
 
 //src permite identificar un archivo 
@@ -23,6 +25,17 @@ function css(done){
 
     done(); //Call back que avisa a gulp cuando lleguamos al final
 }
+
+function imagenes(done){
+        const opciones = {
+            optimizationLevel:3
+        }
+    src('src/img/**/*.{png,jpg}')
+    .pipe(cache(imagemin(opciones)))
+    .pipe(dest('build/img'))
+    done();
+}
+
 function versionWebp(done){
     const opciones ={
         quality:50
@@ -40,6 +53,7 @@ function dev(done){
 }
 
 exports.css=css;
+exports.imagenes= imagenes;
 exports.versionWebp = versionWebp;
 
-exports.dev=parallel(versionWebp,dev);
+exports.dev=parallel(imagenes,versionWebp,dev);

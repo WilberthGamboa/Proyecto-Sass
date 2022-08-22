@@ -33,3 +33,9 @@ ctrl+shift+p, configure uses snippets and open scss.json
 
 ### Convertir imagenes en webp
 npm install --save-dev gulp-webp
+
+### Aligerar imagenes con GULP
+npm i --save-dev gulp-imagemin@7.1.0
+
+### Cache
+npm i --save-dev gulp-cache
