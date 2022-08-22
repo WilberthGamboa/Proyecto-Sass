@@ -27,7 +27,6 @@ Para identificar que es un archivo secundario _nombrearchivo un principal no lle
 ### Estructura 
 Dentro de cada carpeta se debe alojar un _index.scss
 
-
 ### snippets ARCHIVOS SASS
 ctrl+shift+p, configure uses snippets and open scss.json
 
@@ -39,3 +38,6 @@ npm i --save-dev gulp-imagemin@7.1.0
 
 ### Cache
 npm i --save-dev gulp-cache
+
+### Convertir avif
+npm install --save-dev gulp-avif
