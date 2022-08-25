@@ -1,5 +1,6 @@
 # Notas
-
+## Instalar SASS como desarollo
+npm install sass --save-dev
 ## LLamar tareas 
 
 ### Llamar tareas por medio de npx
