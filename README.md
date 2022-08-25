@@ -1,4 +1,7 @@
 # Notas
+## Iniciar proyecto
+npm init
+
 ## Instalar SASS como desarollo
 npm install sass --save-dev
 ## LLamar tareas 
