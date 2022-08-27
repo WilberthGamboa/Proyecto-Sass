@@ -1,4 +1,18 @@
 # Notas
+## Iniciar proyecto
+npm init
+## Instalar SaSS
+npm install sass --save-dev
+
+## Hacer el script para generar la carpeta con compilado
+
+En el package.json quitas el test y agregar
+"sass":"sass/src/scss:build/css"
+antes del punto apunta a app.scss
+la segunda parte a donde se va a compilar el css
+
+## Compilar SASS
+Para compilar el sass usas npm run sass
 
 ## LLamar tareas 
 
