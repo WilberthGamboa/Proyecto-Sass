@@ -3,7 +3,10 @@ const {src, dest,watch, parallel} = require('gulp'); //EXTRAE LA FUNCIONAL DEL J
 //CSS
 const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
-
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const postcss = require('gulp-postcss');
+const sourcemaps= require('gulp-sourcemaps')
 //IMAGENES
 const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
@@ -13,14 +16,18 @@ const avif = require('gulp-avif');
 //src permite identificar un archivo 
 //dest sirve para guardarlo 
 // igual está la funcion de watch
-
+//javascript
+const terser = require('gulp-terser-js');
 function css(done){
     //Indentificar el archivo SASS
     //Aquí utilizaremos pipe, identifica una acción que se realiza después de otra
     //src('src/scss/app.scss').pipe(sass()).pipe(dest("build/css"))  , cambiaremos la sintaxis para que escuche todas
     src('src/scss/**/*.scss')
+    .pipe(sourcemaps().init())
    .pipe(plumber()) //No detiene la ejecucion incluso si hay errores
     .pipe(sass())
+    .pipe(postcss([autoprefixer(),cssnano()]))
+    .pipe(sourcemaps.write('.'))
     .pipe(dest("build/css"))
     .pipe(plumber.stop())
 
@@ -61,6 +68,9 @@ function versionAvif(done){
 
 function javascript(done){
     src('src/js/**/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(terser())
+    .pipe(sourcemaps.write("."))
     .pipe(dest('build/js'));
     done();
     
@@ -72,7 +82,6 @@ function dev(done){
     done();
 }
 
-exports.css=css;
 exports.js = javascript;
 exports.imagenes= imagenes;
 exports.versionWebp = versionWebp;

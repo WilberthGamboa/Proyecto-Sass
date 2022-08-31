@@ -1,4 +1,4 @@
-//RECUERDA QUE DEBE TENER UN ORDEN 
-@forward  'variables'; //Esta es la nueva sintaxis,apunta a los demas doc
-@forward 'normalize';
+@forward 'variables';
 @forward 'globales'; 
+@forward 'mixins';
+@forward 'normalize';

@@ -60,3 +60,13 @@ npm i --save-dev gulp-cache
 
 ### Convertir avif
 npm install --save-dev gulp-avif
+
+### Mimificar codigo
+npm i --save-dev cssnano autoprefixer postcss gulp-postcss
+
+(van seperadas ya que son distintas)
+
+### MAP CSS
+npm i --save-dev source gulp-sourcemaps
+### NANO JS
+npm i gulp-terser-js
